@@ -23,29 +23,29 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto max-w-6xl px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">
+    <section className="py-16 sm:py-20 px-4 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4 text-foreground">
             What Others Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Feedback from supervisors, mentors, and collaborators I've worked with
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="card-shadow bg-card rounded-lg p-6 relative">
-              <Quote className="text-primary mb-4" size={24} />
-              <blockquote className="text-card-foreground mb-6 leading-relaxed">
+            <div key={index} className="card-shadow bg-card rounded-lg p-4 sm:p-6 relative">
+              <Quote className="text-primary mb-4" size={20} />
+              <blockquote className="text-sm sm:text-base text-card-foreground mb-4 sm:mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </blockquote>
               <div className="border-t border-border pt-4">
                 <cite className="not-italic">
-                  <div className="font-semibold text-card-foreground">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                  <div className="font-semibold text-card-foreground text-sm sm:text-base">{testimonial.author}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</div>
                 </cite>
               </div>
             </div>

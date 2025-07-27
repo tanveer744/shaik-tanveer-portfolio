@@ -43,43 +43,43 @@ const Contact = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <main className="pt-24 pb-20 px-6">
+      <main className="pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 text-foreground">
               Let's Connect
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
               I'm always interested in new opportunities, interesting projects, and meaningful conversations. 
               Feel free to reach out!
             </p>
           </div>
 
           {/* Location */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="flex items-center justify-center mb-4">
-              <MapPin className="text-primary mr-2" size={20} />
-              <span className="text-muted-foreground">Based in Bangalore, India</span>
+              <MapPin className="text-primary mr-2" size={18} />
+              <span className="text-muted-foreground text-sm sm:text-base">Based in Bangalore, India</span>
             </div>
           </div>
 
           {/* Contact Methods */}
-          <div className="space-y-6 mb-16">
+          <div className="space-y-4 sm:space-y-6 mb-12 sm:mb-16">
             {contactMethods.map((method) => (
-              <div key={method.label} className="card-shadow bg-card rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="text-primary">
+              <div key={method.label} className="card-shadow bg-card rounded-lg p-4 sm:p-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="text-primary mt-1">
                     {method.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg mb-2 text-card-foreground">{method.label}</h3>
-                    <p className="text-muted-foreground mb-3">{method.description}</p>
-                    <div className="flex items-center space-x-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-base sm:text-lg mb-2 text-card-foreground">{method.label}</h3>
+                    <p className="text-muted-foreground mb-3 text-sm sm:text-base">{method.description}</p>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
                       <a
                         href={method.href}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
                         rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-primary hover:underline font-mono text-sm"
+                        className="text-primary hover:underline font-mono text-sm break-all"
                       >
                         {method.value}
                       </a>
@@ -87,7 +87,7 @@ const Contact = () => {
                         size="sm"
                         variant="outline"
                         onClick={() => copyToClipboard(method.value, method.label)}
-                        className="p-2 h-8 w-8"
+                        className="p-2 h-8 w-8 flex-shrink-0"
                       >
                         <Copy size={14} />
                       </Button>

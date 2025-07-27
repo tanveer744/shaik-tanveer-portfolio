@@ -50,18 +50,18 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4 text-foreground">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4 text-foreground">
             Featured Projects
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             A showcase of my work in AI, automation, and full-stack development
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.title}

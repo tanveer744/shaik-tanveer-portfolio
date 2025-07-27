@@ -39,14 +39,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="card-shadow bg-card rounded-lg p-8">
-      <h2 className="font-heading font-bold text-2xl mb-6 text-card-foreground">
+    <div className="card-shadow bg-card rounded-lg p-4 sm:p-6 lg:p-8">
+      <h2 className="font-heading font-bold text-xl sm:text-2xl mb-4 sm:mb-6 text-card-foreground">
         Send Message
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name" className="text-sm sm:text-base">Name</Label>
             <Input
               id="name"
               name="name"
@@ -54,10 +54,11 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Your full name"
               required
+              className="text-sm sm:text-base"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-sm sm:text-base">Email</Label>
             <Input
               id="email"
               name="email"
@@ -66,12 +67,13 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="your.email@example.com"
               required
+              className="text-sm sm:text-base"
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="subject">Subject</Label>
+          <Label htmlFor="subject" className="text-sm sm:text-base">Subject</Label>
           <Input
             id="subject"
             name="subject"
@@ -79,11 +81,12 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="What's this about?"
             required
+            className="text-sm sm:text-base"
           />
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="message">Message</Label>
+          <Label htmlFor="message" className="text-sm sm:text-base">Message</Label>
           <Textarea
             id="message"
             name="message"
@@ -92,10 +95,11 @@ const ContactForm = () => {
             placeholder="Tell me about your project, opportunity, or just say hello..."
             rows={5}
             required
+            className="text-sm sm:text-base resize-none"
           />
         </div>
         
-        <Button type="submit" disabled={isSubmitting} className="w-full">
+        <Button type="submit" disabled={isSubmitting} className="w-full text-sm sm:text-base">
           {isSubmitting ? (
             "Sending..."
           ) : (
