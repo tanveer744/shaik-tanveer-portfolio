@@ -12,6 +12,10 @@ const FeaturedProjects = () => {
         link: "#", // Add actual IEEE link when available
         icon: <Award size={16} className="text-primary" />
       },
+      metrics: [
+        { label: "Model Accuracy", value: "94%" },
+        { label: "Training Dataset", value: "2200+" }
+      ],
       link: "/project/road-rage-detection",
       image: "placeholder"
     },
@@ -22,6 +26,10 @@ const FeaturedProjects = () => {
       highlight: {
         text: "Session-based auth via Chrome DevTools"
       },
+      metrics: [
+        { label: "Time Saved", value: "80%" },
+        { label: "Automation Rate", value: "95%" }
+      ],
       link: "/project/linkedin-automation",
       image: "placeholder"
     },
@@ -32,6 +40,10 @@ const FeaturedProjects = () => {
       highlight: {
         text: "Internship @ Dev Creations and Solutions (April 2025 – Present)"
       },
+      metrics: [
+        { label: "Efficiency Gain", value: "60%" },
+        { label: "Platform Coverage", value: "100%" }
+      ],
       link: "/project/vendor-management",
       image: "placeholder"
     }

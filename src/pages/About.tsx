@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Award, BookOpen, Trophy, Heart } from "lucide-react";
 
 const About = () => {
@@ -29,6 +30,14 @@ const About = () => {
       <main className="pt-24 pb-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-8">
+              <Avatar className="w-32 h-32">
+                <AvatarImage src="/placeholder.svg" alt="Shaik Tanveer Lohare" />
+                <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">
+                  ST
+                </AvatarFallback>
+              </Avatar>
+            </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6 text-foreground">
               About Me
             </h1>

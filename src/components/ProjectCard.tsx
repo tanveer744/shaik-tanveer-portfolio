@@ -12,11 +12,15 @@ interface ProjectCardProps {
     link?: string;
     icon?: React.ReactNode;
   };
+  metrics?: {
+    label: string;
+    value: string;
+  }[];
   link: string;
   image?: string;
 }
 
-const ProjectCard = ({ title, tagline, techStack, highlight, link, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, tagline, techStack, highlight, metrics, link, image }: ProjectCardProps) => {
   return (
     <div className="card-shadow bg-card rounded-lg p-6 group">
       {image && (
@@ -58,6 +62,17 @@ const ProjectCard = ({ title, tagline, techStack, highlight, link, image }: Proj
               {highlight.text}
             </span>
           )}
+        </div>
+      )}
+      
+      {metrics && metrics.length > 0 && (
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          {metrics.map((metric, index) => (
+            <div key={index} className="text-center p-3 bg-secondary/30 rounded-md">
+              <div className="font-bold text-lg text-primary">{metric.value}</div>
+              <div className="text-xs text-muted-foreground">{metric.label}</div>
+            </div>
+          ))}
         </div>
       )}
       

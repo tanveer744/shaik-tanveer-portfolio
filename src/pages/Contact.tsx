@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, MapPin, Copy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -97,6 +98,11 @@ const Contact = () => {
             ))}
           </div>
 
+          {/* Contact Form */}
+          <div className="mb-16">
+            <ContactForm />
+          </div>
+
           {/* CTA Section */}
           <div className="text-center">
             <div className="card-shadow bg-card rounded-lg p-8">
@@ -111,7 +117,7 @@ const Contact = () => {
                 <a href="mailto:shaiktanveer07404@gmail.com">
                   <Button size="lg">
                     <Mail size={16} className="mr-2" />
-                    Send Message
+                    Quick Email
                   </Button>
                 </a>
                 <a href="/resume/Shaik-Tanveer-Lohare-Resume.pdf" target="_blank" rel="noopener noreferrer">
