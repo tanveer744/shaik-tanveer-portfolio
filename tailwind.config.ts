@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'heading': ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -62,6 +66,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			spacing: {
+				'18': '4.5rem',
+				'88': '22rem',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
