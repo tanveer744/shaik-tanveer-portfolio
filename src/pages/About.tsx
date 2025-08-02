@@ -32,7 +32,7 @@ const About = () => {
           <div className="text-center mb-12 sm:mb-16">
             <div className="flex justify-center mb-6 sm:mb-8">
               <Avatar className="w-24 h-24 sm:w-32 sm:h-32">
-                <AvatarImage src="/placeholder.svg" alt="Shaik Tanveer Lohare" />
+                <AvatarImage src="/profile.jpeg" alt="Shaik Tanveer Lohare" />
                 <AvatarFallback className="text-xl sm:text-2xl font-bold bg-primary text-primary-foreground">
                   ST
                 </AvatarFallback>

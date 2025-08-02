@@ -1,30 +1,33 @@
 import ProjectCard from "./ProjectCard";
-import { Award } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeaturedProjects = () => {
   const projects = [
     {
-      title: "Road Rage Detection Using Deep Learning",
-      tagline: "Built a CNN model achieving 94% accuracy for real-time driver behavior detection.",
-      techStack: ["Python", "TensorFlow", "Keras", "OpenCV"],
+      title: "Scientific Calculator",
+      tagline: "A feature-rich scientific calculator built with React and TypeScript",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
       highlight: {
-        text: "IEEE Publication",
-        link: "#", // Add actual IEEE link when available
-        icon: <Award size={16} className="text-primary" />
+        text: "GitHub Repository",
+        link: "https://github.com/tanveer744/scientific-calculator.git",
+        icon: <ExternalLink size={16} className="text-primary" />
       },
       metrics: [
-        { label: "Model Accuracy", value: "94%" },
-        { label: "Training Dataset", value: "2200+" }
+        { label: "Features", value: "20+" },
+        { label: "Language", value: "TypeScript" }
       ],
-      link: "/project/road-rage-detection",
+      link: "/project/scientific-calculator",
       image: "placeholder"
     },
     {
-      title: "AI-Powered LinkedIn Automation Tool",
-      tagline: "Automated LinkedIn job search with Selenium and Gemini API.",
-      techStack: ["Python", "Tkinter", "Selenium", "Gemini API"],
+      title: "LinkedIn Automator",
+      tagline: "Automated LinkedIn job search and connection management tool",
+      techStack: ["Python", "Selenium", "Chrome DevTools"],
       highlight: {
-        text: "Session-based auth via Chrome DevTools"
+        text: "GitHub Repository",
+        link: "https://github.com/tanveer744/linkedin-automator.git",
+        icon: <ExternalLink size={16} className="text-primary" />
       },
       metrics: [
         { label: "Time Saved", value: "80%" },
@@ -34,19 +37,22 @@ const FeaturedProjects = () => {
       image: "placeholder"
     },
     {
-      title: "Vendor Management System",
-      tagline: "Internship project for streamlining vendor operations.",
-      techStack: ["Flutter", "Firebase", "REST APIs", "JavaScript"],
+      title: "Road Rage Detection",
+      tagline: "Real-time driver behavior detection using deep learning",
+      techStack: ["Python", "TensorFlow", "Keras", "OpenCV"],
       highlight: {
-        text: "Internship @ Dev Creations and Solutions (April 2025 – Present)"
+        text: "GitHub Repository",
+        link: "https://github.com/tanveer744/road-rage-detection.git",
+        icon: <ExternalLink size={16} className="text-primary" />
       },
       metrics: [
-        { label: "Efficiency Gain", value: "60%" },
-        { label: "Platform Coverage", value: "100%" }
+        { label: "Model Accuracy", value: "94%" },
+        { label: "Training Dataset", value: "2200+" }
       ],
-      link: "/project/vendor-management",
+      link: "/project/road-rage-detection",
       image: "placeholder"
-    }
+    },
+
   ];
 
   return (
@@ -63,10 +69,11 @@ const FeaturedProjects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-            />
+            <Link to={`/project/${project.link.split('/').pop()}`} key={project.title}>
+              <ProjectCard
+                {...project}
+              />
+            </Link>
           ))}
         </div>
       </div>

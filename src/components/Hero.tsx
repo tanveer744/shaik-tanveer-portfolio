@@ -1,11 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "@/hooks/use-theme";
 
 const Hero = () => {
+  const { theme } = useTheme();
+
   return (
     <section className="pt-20 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl text-center">
+        <div className="flex flex-col items-center justify-center mb-8 sm:mb-10">
+          <img
+            src={theme === "dark" ? "/ST_dark.png" : "/ST_white.png"}
+            alt="Tanveer Lohare Logo"
+            className="w-24 h-24 sm:w-32 sm:h-32 mb-4"
+          />
+        </div>
         <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-foreground leading-tight">
           SHAIK TANVEER
           <br />
@@ -65,7 +75,7 @@ const Hero = () => {
             </Button>
           </Link>
           <a 
-            href="/resume/Shaik-Tanveer-Lohare-Resume.pdf" 
+            href="https://drive.google.com/file/d/1XM7oDgtQE2RV2sz9nMetpM9atabDzW1x/view?usp=sharing" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full sm:w-auto"

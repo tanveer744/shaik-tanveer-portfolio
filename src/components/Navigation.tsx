@@ -47,7 +47,7 @@ const Navigation = () => {
             </Link>
           ))}
           <a
-            href="/resume/Shaik-Tanveer-Lohare-Resume.pdf"
+            href="https://drive.google.com/file/d/1XM7oDgtQE2RV2sz9nMetpM9atabDzW1x/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-fast border border-border hover:border-primary/50 px-3 py-2 rounded-md"
@@ -90,7 +90,7 @@ const Navigation = () => {
                   ))}
                   
                   <a
-                    href="/resume/Shaik-Tanveer-Lohare-Resume.pdf"
+                    href="https://drive.google.com/file/d/1XM7oDgtQE2RV2sz9nMetpM9atabDzW1x/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={closeMenu}
