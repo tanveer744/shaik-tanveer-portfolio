@@ -10,50 +10,52 @@ const FeaturedProjects = () => {
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       highlight: {
         text: "GitHub Repository",
-        link: "https://github.com/tanveer744/scientific-calculator.git",
+        link: "https://github.com/tanveer744/scientific-calculator",
         icon: <ExternalLink size={16} className="text-primary" />
       },
       metrics: [
         { label: "Features", value: "20+" },
         { label: "Language", value: "TypeScript" }
       ],
-      link: "/project/scientific-calculator",
-      image: "placeholder"
-    },
-    {
-      title: "LinkedIn Automator",
-      tagline: "Automated LinkedIn job search and connection management tool",
-      techStack: ["Python", "Selenium", "Chrome DevTools"],
-      highlight: {
-        text: "GitHub Repository",
-        link: "https://github.com/tanveer744/linkedin-automator.git",
-        icon: <ExternalLink size={16} className="text-primary" />
-      },
-      metrics: [
-        { label: "Time Saved", value: "80%" },
-        { label: "Automation Rate", value: "95%" }
-      ],
-      link: "/project/linkedin-automation",
+      projectLink: "/project/scientific-calculator",
+      githubLink: "https://github.com/tanveer744/scientific-calculator",
       image: "placeholder"
     },
     {
       title: "Road Rage Detection",
-      tagline: "Real-time driver behavior detection using deep learning",
+      tagline: "Built a CNN model achieving 94% accuracy for real-time driver behavior detection.",
       techStack: ["Python", "TensorFlow", "Keras", "OpenCV"],
       highlight: {
         text: "GitHub Repository",
-        link: "https://github.com/tanveer744/road-rage-detection.git",
+        link: "https://github.com/tanveer744/road-rage-detection",
         icon: <ExternalLink size={16} className="text-primary" />
       },
       metrics: [
         { label: "Model Accuracy", value: "94%" },
         { label: "Training Dataset", value: "2200+" }
       ],
-      link: "/project/road-rage-detection",
+      projectLink: "/project/road-rage-detection",
+      githubLink: "https://github.com/tanveer744/road-rage-detection",
       image: "placeholder"
     },
-
-  ];
+    {
+      title: "LinkedIn Automator",
+      tagline: "Automated LinkedIn job search with Selenium and Gemini API.",
+      techStack: ["Python", "Tkinter", "Selenium", "Gemini API"],
+      highlight: {
+        text: "GitHub Repository",
+        link: "https://github.com/tanveer744/linkedin-automator",
+        icon: <ExternalLink size={16} className="text-primary" />
+      },
+      metrics: [
+        { label: "Time Saved", value: "80%" },
+        { label: "Automation Rate", value: "95%" }
+      ],
+      projectLink: "/project/linkedin-automator",
+      githubLink: "https://github.com/tanveer744/linkedin-automator",
+      image: "placeholder"
+    }
+];
 
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-6">
@@ -69,7 +71,7 @@ const FeaturedProjects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project) => (
-            <Link to={`/project/${project.link.split('/').pop()}`} key={project.title}>
+            <Link to={project.projectLink} key={project.title}>
               <ProjectCard
                 {...project}
               />

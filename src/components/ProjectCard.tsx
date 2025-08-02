@@ -16,11 +16,12 @@ interface ProjectCardProps {
     label: string;
     value: string;
   }[];
-  link: string;
+  projectLink: string;
+  githubLink: string;
   image?: string;
 }
 
-const ProjectCard = ({ title, tagline, techStack, highlight, metrics, link, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, tagline, techStack, highlight, metrics, projectLink, githubLink, image }: ProjectCardProps) => {
   return (
     <div className="card-shadow bg-card rounded-lg p-4 sm:p-6 group h-full flex flex-col">
       {image && (
@@ -78,13 +79,21 @@ const ProjectCard = ({ title, tagline, techStack, highlight, metrics, link, imag
         </div>
       )}
       
-      <div className="mt-auto">
-        <Link to={link} className="block">
+      <div className="mt-auto flex gap-2">
+        <Link to={projectLink} className="block">
           <Button variant="outline" size="sm" className="group/btn w-full sm:w-auto">
             View Project
             <ExternalLink size={14} className="ml-2 group-hover/btn:scale-110 transition-transform" />
           </Button>
         </Link>
+        {githubLink && (
+          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="block">
+            <Button variant="outline" size="sm" className="group/btn w-full sm:w-auto">
+              GitHub
+              <ExternalLink size={14} className="ml-2 group-hover/btn:scale-110 transition-transform" />
+            </Button>
+          </a>
+        )}
       </div>
     </div>
   );

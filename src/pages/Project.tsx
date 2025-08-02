@@ -97,98 +97,84 @@ const Project = () => {
         <div className="container mx-auto max-w-4xl">
           {/* Back button */}
           <div className="mb-8">
-            <Link 
-              to="/"
-              className="inline-flex items-center space-x-2 text-muted-foreground hover:text-primary transition-fast"
-            >
-              <ArrowLeft size={16} />
+            <Link to="/" className="flex items-center gap-2 text-primary hover:text-primary/80">
+              <ArrowLeft className="w-4 h-4" />
               <span>Back to Projects</span>
             </Link>
           </div>
 
-          {/* Project Header */}
-          <div className="mb-12">
-            <h1 className="font-heading font-bold text-3xl sm:text-4xl mb-4 text-foreground">
-              {project.title}
-            </h1>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">{project.description}</p>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="mb-12">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl mb-4 text-foreground">
-              Tech Stack
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center px-3 py-1 rounded-full bg-muted text-xs font-medium text-muted-foreground"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Features */}
-          <div className="mb-12">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl mb-6 text-foreground">
-              Features
-            </h2>
+          {/* Project Content */}
+          <div className="space-y-8">
+            {/* Header */}
             <div className="space-y-4">
-              {project.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <span className="text-primary">•</span>
-                  <p className="text-muted-foreground">{feature}</p>
-                </div>
-              ))}
+              <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{project.title}</h1>
+              <p className="text-lg text-muted-foreground">{project.description}</p>
             </div>
-          </div>
 
-          {/* Links */}
-          <div className="mb-12">
-            <h2 className="font-heading font-bold text-xl sm:text-2xl mb-6 text-foreground">
-              Links
-            </h2>
+            {/* Features */}
             <div className="space-y-4">
-              <a
-                href={project.projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-primary hover:underline transition-fast"
-              >
-                <span>View Project</span>
-              </a>
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-primary hover:underline transition-fast"
-              >
-                <span>GitHub Repository</span>
-              </a>
+              <h2 className="text-xl font-semibold text-foreground">Features</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {project.features.map((feature, index) => (
+                  <li key={index} className="text-muted-foreground">{feature}</li>
+                ))}
+              </ul>
             </div>
-          </div>
 
-          {/* Screenshots */}
-          {project.screenshots && project.screenshots.length > 0 && (
-            <div className="mb-12">
-              <h2 className="font-heading font-bold text-xl sm:text-2xl mb-6 text-foreground">
-                Screenshots
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {project.screenshots.map((screenshot, index) => (
-                  <img
+            {/* Tech Stack */}
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-foreground">Tech Stack</h2>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, index) => (
+                  <span
                     key={index}
-                    src={screenshot}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    className="rounded-lg shadow-lg"
-                  />
+                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent text-accent-foreground"
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
-          )}
+
+            {/* Links */}
+            <div className="flex gap-4">
+              <a 
+                href={project.projectUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                View Project
+              </a>
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors"
+              >
+                GitHub
+              </a>
+            </div>
+
+            {/* Screenshots */}
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="mb-12">
+                <h2 className="font-heading font-bold text-xl sm:text-2xl mb-6 text-foreground">
+                  Screenshots
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {project.screenshots.map((screenshot, index) => (
+                    <img
+                      key={index}
+                      src={screenshot}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      className="rounded-lg shadow-lg"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>
