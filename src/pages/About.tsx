@@ -61,6 +61,24 @@ const About = () => {
             </div>
           </section>
 
+          {/* Professional Experience */}
+          <section className="mb-12 sm:mb-16">
+            <div className="flex items-center mb-6 sm:mb-8">
+              <Trophy className="text-primary mr-3" size={20} />
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-foreground">Professional Experience</h2>
+            </div>
+            <div className="card-shadow bg-card rounded-lg p-4 sm:p-6">
+              <h3 className="font-bold text-lg sm:text-xl mb-2">Dev Creations and Solutions</h3>
+              <p className="text-muted-foreground mb-2 text-sm sm:text-base">Full Stack Development Intern</p>
+              <p className="text-muted-foreground text-sm sm:text-base">April 2025 - Present</p>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4">
+                {['HTML', 'CSS', 'JavaScript', 'Flutter', 'Firebase', 'REST APIs', 'Git', 'VS Code'].map((tech) => (
+                  <Badge key={tech} variant="secondary" className="text-xs sm:text-sm">{tech}</Badge>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Technical Skills */}
           <section className="mb-12 sm:mb-16">
             <h2 className="font-heading font-bold text-xl sm:text-2xl mb-6 sm:mb-8 text-foreground">Technical Skills</h2>
