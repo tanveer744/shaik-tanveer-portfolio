@@ -49,7 +49,11 @@ const ProjectCard = ({ title, tagline, techStack, highlight, metrics, projectLin
       
       <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
         {techStack.map((tech) => (
-          <Badge key={tech} variant="secondary" className="text-xs">
+          <Badge 
+            key={tech} 
+            variant="skill" 
+            className="text-xs font-medium transition-all duration-300"
+          >
             {tech}
           </Badge>
         ))}
