@@ -36,7 +36,7 @@ const FeaturedProjects = () => {
       ],
       projectLink: "/project/road-rage-detection",
       githubLink: "https://github.com/tanveer744/road-rage-detection",
-      image: "placeholder"
+      image: "/road_rage.png"
     },
     {
       title: "LinkedIn Automator",
@@ -53,7 +53,7 @@ const FeaturedProjects = () => {
       ],
       projectLink: "/project/linkedin-automator",
       githubLink: "https://github.com/tanveer744/linkedin-automator",
-      image: "placeholder"
+      image: "/linkedin_automator.png"
     }
 ];
 

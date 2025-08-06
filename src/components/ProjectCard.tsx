@@ -24,8 +24,17 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, tagline, techStack, highlight, metrics, projectLink, githubLink, image }: ProjectCardProps) => {
   return (
     <div className="card-shadow bg-card rounded-lg p-4 sm:p-6 group h-full flex flex-col">
-      {image && (
-        <div className="w-full h-40 sm:h-48 bg-muted rounded-md mb-4 sm:mb-6 flex items-center justify-center">
+      {image && image !== 'placeholder' ? (
+        <div className="w-full bg-white rounded-md mb-3 sm:mb-4 overflow-hidden flex items-center justify-center">
+          <img 
+            src={image} 
+            alt={title} 
+            className="max-w-full max-h-36 w-auto h-auto object-contain p-2"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </div>
+      ) : (
+        <div className="w-full h-32 sm:h-36 bg-white rounded-md mb-3 sm:mb-4 flex items-center justify-center">
           <span className="text-muted-foreground text-sm">Project Visual</span>
         </div>
       )}

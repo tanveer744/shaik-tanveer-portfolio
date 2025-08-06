@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { ArrowLeft } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useTheme } from "@/hooks/use-theme";
 
 interface ProjectProps {
   title: string;
@@ -57,6 +59,7 @@ const projects = {
     techStack: ["Python", "TensorFlow", "Keras", "OpenCV", "Jupyter Notebook"],
     projectUrl: "https://github.com/tanveer744/road-rage-detection",
     githubUrl: "https://github.com/tanveer744/road-rage-detection",
+    video: "/road_rage.mp4",
     screenshots: []
   },
   "linkedin-automator": {
@@ -77,13 +80,24 @@ const projects = {
     techStack: ["Python", "Tkinter", "Selenium", "ChromeDriver", "Gemini API"],
     projectUrl: "https://github.com/tanveer744/linkedin-automator",
     githubUrl: "https://github.com/tanveer744/linkedin-automator",
+    video: "/linkedin_automator.mp4",
     screenshots: []
   }
 };
 
 const Project = () => {
   const { projectId } = useParams();
+  const { pathname } = useLocation();
+  const { theme } = useTheme();
   const project = projects[projectId];
+  
+  // Get the appropriate logo based on theme
+  const logoPath = theme === 'dark' ? '/ST_white.png' : '/ST_dark.png';
+
+  // Scroll to top when project changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   if (!project) {
     return <div>Project not found</div>;
@@ -155,6 +169,24 @@ const Project = () => {
                 GitHub
               </a>
             </div>
+
+            {/* Video Demo */}
+            {project.video && (
+              <div className="space-y-2">
+                <h2 className="text-lg font-semibold text-foreground">Video Demo</h2>
+                <div className="max-w-2xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                  <video 
+                    className="w-full h-auto max-h-[400px] rounded-lg" 
+                    controls 
+                    preload="metadata"
+                    poster={logoPath}
+                  >
+                    <source src={project.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            )}
 
             {/* Screenshots */}
             {project.screenshots && project.screenshots.length > 0 && (
