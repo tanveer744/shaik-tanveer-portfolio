@@ -19,7 +19,7 @@ const FeaturedProjects = () => {
       ],
       projectLink: "/project/scientific-calculator",
       githubLink: "https://github.com/tanveer744/scientific-calculator",
-      image: "placeholder"
+      image: "/scientific_calculator.png"
     },
     {
       title: "Road Rage Detection",

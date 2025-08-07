@@ -2,6 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Gradient Icon Styles */
+.gradient-icon {
+  --gradient-from: #4f46e5;
+  --gradient-to: #7c3aed;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.5s, box-shadow 0.5s;
+  overflow: hidden;
+}
+
+.gradient-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--gradient-from), var(--gradient-to));
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.gradient-icon::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--gradient-from), var(--gradient-to));
+  transition: opacity 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.gradient-icon:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+.gradient-icon:hover::before {
+  opacity: 1;
+}
+
+.gradient-icon:hover::after {
+  opacity: 0.5;
+}
+
+.gradient-icon__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-icon__icon {
+  color: #777;
+  font-size: 1.75em;
+  transition: all 0.5s;
+  transition-delay: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-icon:hover .gradient-icon__icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+.gradient-icon__title {
+  position: absolute;
+  color: #fff;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: transform 0.5s;
+  transition-delay: 0s;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.gradient-icon:hover .gradient-icon__title {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

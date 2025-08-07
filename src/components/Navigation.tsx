@@ -2,17 +2,19 @@ import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, User, Mail, Briefcase, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { AnimatedNavItem } from "@/components/ui/animated-nav-item";
 
 const Navigation = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Work", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Work", href: "/", icon: <Briefcase className="w-5 h-5" /> },
+    { label: "About", href: "/about", icon: <User className="w-5 h-5" /> },
+    { label: "Contact", href: "/contact", icon: <Mail className="w-5 h-5" /> },
+    { label: "Icons Demo", href: "/icons-demo", icon: <Sparkles className="w-5 h-5" /> },
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -29,22 +31,15 @@ const Navigation = () => {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <div className="hidden md:flex items-center space-x-2">
           {navItems.map((item) => (
-            <Link
+            <AnimatedNavItem
               key={item.href}
-              to={item.href}
-              className={`text-sm font-medium transition-fast relative ${
-                location.pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {item.label}
-              {location.pathname === item.href && (
-                <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-primary rounded-full" />
-              )}
-            </Link>
+              href={item.href}
+              icon={item.icon}
+              title={item.label}
+              className={location.pathname === item.href ? "ring-1 ring-ring/20" : ""}
+            />
           ))}
           <a
             href="https://drive.google.com/file/d/1XM7oDgtQE2RV2sz9nMetpM9atabDzW1x/view?usp=sharing"
